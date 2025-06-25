@@ -19,7 +19,7 @@ jobs:
       - name: Build
         run: npm run build # Or your build command
       - name: Deploy to Firebase
-        uses: w9jds/firebase-action@v1
+        uses: w9jds/firebase-action@master
         with:
           args: deploy --only functions
         env:
