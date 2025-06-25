@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: 16
       - name: Install Dependencies
-        run: npm install
+        run: cd functions && npm install
       - name: Build
         run: npm run build # Or your build command
       - name: Deploy to Firebase
