@@ -6,6 +6,7 @@ import {onDocumentCreated} from "firebase-functions/v2/firestore";
 // The Firebase Admin SDK to access Firestore.
 import {initializeApp} from "firebase-admin/app";
 import {getFirestore} from "firebase-admin/firestore";
+import {getAnalysis} from "./ai";
 
 initializeApp();
 
@@ -41,3 +42,8 @@ exports.makeuppercase = onDocumentCreated("/messages/{documentId}",
     // Setting an 'uppercase' field in Firestore document returns a Promise.
     return event.data.ref.set({uppercase}, {merge: true});
   });
+exports.ai = onRequest(async (req:any, res:any) => {
+  if (req.method.toLowerCase() === "post") {
+    res.json(getAnalysis(req.body));
+  }
+});
