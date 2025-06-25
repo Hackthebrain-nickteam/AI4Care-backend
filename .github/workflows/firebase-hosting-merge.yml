@@ -21,4 +21,4 @@ jobs:
         with:
           args: deploy --only functions
         env:
-          FIREBASE_SERVICE_ACCOUNT_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HACKTHEBRAIN_NAASS }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HACKTHEBRAIN_NAASS }}
